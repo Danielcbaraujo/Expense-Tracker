@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 1,
+    "description": "Pizza Grande",
+    "amount": 60,
+    "date": "2026-05-19"
+  },
+  {
+    "id": 3,
+    "description": "almoço",
+    "amount": 60,
+    "date": "2026-05-19"
+  }
+]
