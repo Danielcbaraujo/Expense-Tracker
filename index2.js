@@ -1,8 +1,8 @@
-const readExpenses = require("./utils/readExpenses");
-const saveExpenses = require("./utils/saveExpenses");
-
+const fs = require("fs");
 const command = process.argv[2];
-const expenses = readExpenses(expenses);
+
+const data = fs.existsSync("expenses.json") ? fs.readFileSync("expenses.json", "utf-8") : "[]";
+const expenses = JSON.parse(data);
 
 if (command === "add") {
   const descriptionIndex = process.argv.indexOf("--description");
