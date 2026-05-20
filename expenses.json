@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
-    "description": "Pizza Grande",
-    "amount": 60,
+    "id": 3,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": 777,
     "date": "2026-05-19"
   },
   {
-    "id": 3,
-    "description": "almoço",
-    "amount": 60,
-    "date": "2026-05-19"
+    "id": 4,
+    "description": "Aluguel",
+    "amount": 1500,
+    "date": "2026-05-20"
   }
 ]
