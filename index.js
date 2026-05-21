@@ -1,83 +1,27 @@
 const readExpenses = require("./utils/readExpenses");
 const saveExpenses = require("./utils/saveExpenses");
-
+const addExpense = require("./commands/addExpense");
+const listExpenses = require("./commands/listExpenses");
+const deleteExpense = require("./commands/deleteExpense");
+const updateExpense = require("./commands/updateExpense");
 const command = process.argv[2];
 const expenses = readExpenses(expenses);
 
 if (command === "add") {
-  const descriptionIndex = process.argv.indexOf("--description");
-  const description = process.argv[descriptionIndex + 1];
-
-  const amountIndex = process.argv.indexOf("--amount");
-  const amount = process.argv[amountIndex + 1];
-
-  const lastId = expenses.length > 0 ? expenses[expenses.length - 1].id : 0;
-
-  const newExpense = {
-    id: lastId + 1,
-    description: description,
-    amount: Number(amount),
-    date: new Date().toISOString().split("T")[0]
-  };
-
-  expenses.push(newExpense);
-
-  fs.writeFileSync(
-    "expenses.json",
-    JSON.stringify(expenses, null, 2)
-  );
-
-  console.log("Despesa adicionada com sucesso!");
+  addExpense();
 }
 
-if (command === "list") {
-  console.log("ID | DESCRIPTION | AMOUNT | DATE");
 
-  for (const expense of expenses) {
-    console.log(`${expense.id} | ${expense.description} | $${expense.amount} | ${expense.date}`);
-  }
+if (command === "list") {
+   listExpenses();
 }
 
 if (command === "delete") {
-  const idIndex = process.argv.indexOf("--id");
-  const id = Number(process.argv[idIndex + 1]);
-
-  const filteredExpenses = expenses.filter(expense => expense.id !== id);
-
-  fs.writeFileSync(
-    "expenses.json",
-    JSON.stringify(filteredExpenses, null, 2)
-  );
-
-  console.log("Despesa removida com sucesso!");
+  deleteExpense();
 }
 
 if (command === "update") {
-  const idIndex = process.argv.indexOf("--id");
-  const id = Number(process.argv[idIndex + 1]);
-
-  const descriptionIndex = process.argv.indexOf("--description");
-  const description = process.argv[descriptionIndex + 1];
-
-  const amountIndex = process.argv.indexOf("--amount");
-  const amount = Number(process.argv[amountIndex + 1]);
-
-  const expense = expenses.find(expense => expense.id === id);
-
-  if (!expense) {
-    console.log("Despesa não encontrada!");
-    process.exit();
-  }
-
-  if (description) expense.description = description;
-  if (amount) expense.amount = amount;
-
-  fs.writeFileSync(
-    "expenses.json",
-    JSON.stringify(expenses, null, 2)
-  );
-
-  console.log("Despesa atualizada com sucesso!");
+  updateExpense()
 }
 
 if (command === "summary") {
