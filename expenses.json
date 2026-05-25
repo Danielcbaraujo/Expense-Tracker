@@ -10,5 +10,46 @@
     "description": "Aluguel",
     "amount": 1500,
     "date": "2026-05-20"
+  },
+  {
+    "id": 5,
+    "description": "Pizza",
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 6,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 7,
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 8,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 9,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 10,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": null,
+    "date": "2026-05-25"
+  },
+  {
+    "id": 11,
+    "description": "/usr/local/share/nvm/versions/node/v24.14.0/bin/node",
+    "amount": null,
+    "date": "2026-05-25"
   }
 ]
